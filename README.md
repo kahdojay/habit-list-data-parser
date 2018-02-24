@@ -1,2 +1,2 @@
 # habit-list-data-parser
-Utility to parse JSON data from the Habit List mobile app
+Basic CLI Utility to parse JSON data from the [Habit List mobile app](https://habitlist.com/)
