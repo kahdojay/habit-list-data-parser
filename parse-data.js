@@ -11,21 +11,22 @@ if (
 const habitData = require('./' + process.argv[2]);
 
 // for each habit, return a count of successes between the start and end date, inclusive
-const startDate = new Date(process.argv[3]).getUTCDate();
-const endDate = new Date(process.argv[4]).getUTCDate();
+const startDate = new Date(process.argv[3]);
+const endDate = new Date(process.argv[4]);
 console.log('================');
-console.log('start date: ', startDate);
-console.log('end date: ', endDate);
+console.log('start date: ' + startDate.getMonth() + '/' + startDate.getDate());
+console.log('end date: ' + endDate.getMonth() + '/' + endDate.getDate());
 console.log('================');
-
 // count number of occurrences within start and end dates, inclusive
+console.log('Completions within start and end dates, inclusive:')
+console.log('-------------------')
 habitData.forEach(function(habitObj) {
   let completions = []
   habitObj.completed.forEach(function(date) {
     let completionDate = new Date(date).getUTCDate()
-    if (completionDate >= new Date(startDate) && completionDate <= new Date(endDate)) {
+    if (completionDate >= new Date(startDate.getUTCDate()) && completionDate <= new Date(endDate.getUTCDate())) {
       completions.push(completionDate)
     }
   })
-  console.log(`${habitObj.name}: `, completions.length)
+  console.log(`${habitObj.name}: ${completions.length}`)
 });
