@@ -6,7 +6,7 @@ if (
   process.argv[3] === undefined ||
   process.argv[4] === undefined) {
     console.log('Error: invalid arguments');
-    console.log('usage: node parse-data.js <habitdata.json> <startDate (mm/dd)> <endDate (mm/dd)> to get habit count for dates inclusive');
+    console.log('usage: node parse-data.js <habitdata.json> <startDate (mm/dd/yy)> <endDate (mm/dd/yy)> to get habit count for dates inclusive');
     process.exit(1);
 };
 // import the json file
